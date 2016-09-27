@@ -2,29 +2,7 @@
 {if $category_link=='/pl/garnitury' || $category_link=='/en_GB/suits' || $category_link=='/pl/c/Brandy/260' || $category_link == '/pl/torby' || $category_link=='/pl/spodnie' || $category_link=='/pl/koszule-meskie' || $category_link=='/preorder' || $category_link=='/pl/manufaktura-miler' || $category_link=='/pl/akcesoria/rekawiczki' || $category_link=='/pl/obuwie/loake' || $category_link=='/pl/obuwie/carmina' || $category_link=='/pl/obuwie/berwick'} {include file='header.tpl'}
 <body{if $body_id} id="{$body_id|escape}" {/if}{if $body_class} class="{$body_class|escape}" {/if}>
 
-    {literal}
-    <!-- Google Tag Manager -->
-    <noscript>
-        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-ML92MV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-ML92MV');
-    </script>
-    <!-- End Google Tag Manager -->
-    {/literal} {include file='body_head.tpl'}
+    {include file='body_head.tpl'}
     <div class="content-wrapper clearfix" itemscope itemtype="{$schema}://schema.org/Product">
 
 
@@ -328,29 +306,7 @@
     {else} {include file='header.tpl'}
     <body{if $body_id} id="{$body_id|escape}" {/if}{if $body_class} class="{$body_class|escape}" {/if}>
 
-        {literal}
-        <!-- Google Tag Manager -->
-        <noscript>
-            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-ML92MV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-        </noscript>
-        <script>
-            (function (w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    'gtm.start': new Date().getTime(),
-                    event: 'gtm.js'
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src =
-                    '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-ML92MV');
-        </script>
-        <!-- End Google Tag Manager -->
-        {/literal} {include file='body_head.tpl'}
+        {include file='body_head.tpl'}
         <div class="content-wrapper container clearfix" itemscope itemtype="{$schema}://schema.org/Product">
 
 

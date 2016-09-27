@@ -1,29 +1,7 @@
 {include file='header.tpl'}
-<body{if $body_id} id="{$body_id|escape}" {/if}{if $body_class} class="{$body_class|escape}" {/if}>
+<body{if $body_id} id="{$body_id|escape}"{/if}{if $body_class} class="{$body_class|escape}"{/if}>
 
-    {literal}
-    <!-- Google Tag Manager -->
-    <noscript>
-        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-ML92MV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-ML92MV');
-    </script>
-    <!-- End Google Tag Manager -->
-    {/literal} {include file='body_head.tpl'}
+    {include file='body_head.tpl'}
 
     <div class="container content-wrapper clearfix">
 
@@ -33,18 +11,20 @@
             <div class="innerbox">
                 {if count($user->user->addresses) > 0}
                 <div class="user-addresses-wrapper">
-                    {foreach from=$user->user->addresses item=address name=list} {assign var=address value=$address->address}
+                    {foreach from=$user->user->addresses item=address name=list}
+                    {assign var=address value=$address->address}
                     <div class="user-addresses clearfix {if $smarty.foreach.list.index % 2}odd{else}even{/if}">
                         <ul class="address-list">
                             {if $address->firstname || $address->lastname}
-                            <li class="name">{if $address->firstname}{$address->firstname|escape} {/if}{if $address->lastname}{$address->lastname|escape}{/if}</li>{/if} {if $address->company_name}
-                            <li class="company">{$address->company_name|escape}</li>{/if} {if $address->tax_id}
-                            <li class="nip">{translate key='NIP No.:'} {$address->tax_id|escape}</li>{/if} {if $address->pesel}
-                            <li class="pesel">{translate key='PESEL:'} {$address->pesel|escape}</li>{/if} {if $address->street_1}
-                            <li class="address">{$address->street_1|escape}</li>{/if} {if $address->zip_code || $address->city}
-                            <li class="city">{if $address->zip_code}{$address->zip_code|escape}, {/if}{if $address->city}{$address->city|escape}{/if}</li>{/if} {if $address->country}
-                            <li class="country">{$address->country|escape}</li>{/if} {if $address->phone}
-                            <li class="phone">{$address->phone|escape}</li>{/if}
+                            <li class="name">{if $address->firstname}{$address->firstname|escape} {/if}{if $address->lastname}{$address->lastname|escape}{/if}</li>{/if}
+                            {if $address->company_name}<li class="company">{$address->company_name|escape}</li>{/if}
+                            {if $address->tax_id}<li class="nip">{translate key='NIP No.:'} {$address->tax_id|escape}</li>{/if}
+                            {if $address->pesel}<li class="pesel">{translate key='PESEL:'} {$address->pesel|escape}</li>{/if}
+                            {if $address->street_1}<li class="address">{$address->street_1|escape}</li>{/if}
+                            {if $address->zip_code || $address->city}
+                            <li class="city">{if $address->zip_code}{$address->zip_code|escape}, {/if}{if $address->city}{$address->city|escape}{/if}</li>{/if}
+                            {if $address->country}<li class="country">{$address->country|escape}</li>{/if}
+                            {if $address->phone}<li class="phone">{$address->phone|escape}</li>{/if}
                         </ul>
 
                         <ul class="links">
@@ -66,7 +46,8 @@
                                 {else}
                                 <em class="default">
                                     <span>{translate key='default payment address'}</span>
-                                </em> {/if}
+                                </em>
+                                {/if}
                             </li>
                             <li>
                                 {if 0 == $address->shipping_default}
@@ -76,7 +57,8 @@
                                 {else}
                                 <em class="shipping">
                                     <span>{translate key='default delivery address'}</span>
-                                </em> {/if}
+                                </em>
+                                {/if}
                             </li>
                         </ul>
                     </div>
@@ -92,7 +74,9 @@
             </div>
         </div>
     </div>
-    {include file='footerbox.tpl'} {include file='footer.tpl' force_include_cache='1' force_include_cache_tags='Logic_SkinFooterGroupList,Logic_SkinFooterLinkList,Logic_SkinFooterGroup,Logic_SkinFooterLink'} {plugin module=shop template=footer} {include file='switch.tpl'}
+    {include file='footerbox.tpl'}
+    {include file='footer.tpl' force_include_cache='1' force_include_cache_tags='Logic_SkinFooterGroupList,Logic_SkinFooterLinkList,Logic_SkinFooterGroup,Logic_SkinFooterLink'}
+    {plugin module=shop template=footer}
+    {include file='switch.tpl'}
     </body>
-
-    </html>
+</html>
