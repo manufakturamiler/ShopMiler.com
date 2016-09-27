@@ -1,60 +1,50 @@
 {include file='header.tpl'}
-<body{if $body_id} id="{$body_id|escape}"{/if}{if $body_class} class="{$body_class|escape}"{/if}>
+<body{if $body_id} id="{$body_id|escape}" {/if}{if $body_class} class="{$body_class|escape}" {/if}>
 
     {literal}
 
     <script>
         dataLayer = [{
-            'transactionId': '{order_id}',
-            'transactionTotal': '{sum}',
-            'transactionTax': '{tax}',
-            'transactionShipping': '{shipping}',
-            'transactionProducts': [{
-                'sku': '{products.product_id}',
-                'name': '{products.no}',
-                'category': '{products.category}',
-                'variants': '{products.option}',
-                'price': '{products.price}',
-                'quantity': '{products.quantity}'
+        'transactionId': '{order_id}',
+        'transactionTotal': '{sum}',
+        'transactionTax': '{tax}',
+        'transactionShipping': '{shipping}',
+        'transactionProducts': [{
+            'sku': '{products.product_id}',
+            'name': '{products.no}',
+            'category': '{products.category}',
+            'variants': '{products.option}',
+            'price': '{products.price}',
+            'quantity': '{products.quantity}'
             }]
         }]
 
         }];
     </script>
-    {/literal}
-
-    {include file='body_head_checkout.tpl'}
+    {/literal} {include file='body_head_checkout.tpl'}
     <div class="container content-wrapper clearfix">
 
         <div class="box" id="box_basketfinal">
             <h2 class="page-title">{translate key='Message after payment'}</h2>
-            <h4 class="paystatus">{$msg|escape}</h4>
-            {$payment_output}
+            <h4 class="paystatus">{$msg|escape}</h4> {$payment_output}
         </div>
 
     </div>
-    {include file='footerbox.tpl'}
-    {include file='footer.tpl' force_include_cache='1' force_include_cache_tags='Logic_SkinFooterGroupList,Logic_SkinFooterLinkList,Logic_SkinFooterGroup,Logic_SkinFooterLink'}
-    {plugin module=shop template=footer}
-    {include file='switch.tpl'}
-
-
-    {literal}
+    {include file='footerbox.tpl'} {include file='footer.tpl' force_include_cache='1' force_include_cache_tags='Logic_SkinFooterGroupList,Logic_SkinFooterLinkList,Logic_SkinFooterGroup,Logic_SkinFooterLink'} {plugin module=shop template=footer} {include file='switch.tpl'} {literal}
 
     <script type="text/javascript">
         var gr_goal_params = {
-            param_0 : '',
-            param_1 : '',
-            param_2 : '',
-            param_3 : '',
-            param_4 : '',
-            param_5 : ''
-        };</script>
+            param_0: '',
+            param_1: '',
+            param_2: '',
+            param_3: '',
+            param_4: '',
+            param_5: ''
+        };
+    </script>
     <script type="text/javascript" src="https://app.getresponse.com/goals_log.js?p=722304&u=BHk6o"></script>
 
-    {/literal}
-
-    {literal}
+    {/literal} {literal}
     <script type="text/javascript">
         /* <![CDATA[ */
         var google_conversion_id = 1029938373;
@@ -71,4 +61,5 @@
     </script>
     {/literal}
     </body>
-</html>
+
+    </html>
