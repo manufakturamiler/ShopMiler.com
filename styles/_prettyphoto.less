@@ -1,0 +1,229 @@
+.pp_pic_holder {
+    .box-shadow(0 0 15px 2px rgba(0, 0, 0, 0.9));
+    display: none;
+    position: absolute;
+    width: 100px;
+    z-index: 10000;
+    padding: 1em;
+    background-color: @colorWhite;
+    #pp_full_res {
+        margin: 0 20px;
+        img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+    .pp_pic_holder a {
+        color: #000;
+    }
+    .pp_close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 14px;
+        color: #000;
+        z-index: 100;
+        text-transform: uppercase;
+        &:hover {
+            text-decoration: none;
+        }
+        &::after {
+            content: "x";
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 5px;
+            text-transform: lowercase;
+        }
+    }
+    .pp_expand,
+    .pp_contract {
+        position: absolute;
+        top: 20px;
+        font-size: 14px;
+        color: #000;
+        z-index: 9999;
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: inherit;
+        -webkit-font-smoothing: antialiased;
+        *margin-right: .3em;
+        display: block;
+        right: 8em;
+        text-transform: uppercase;
+        &::after {
+            font-family: FontAwesome;
+        }
+    }
+    .pp_expand::after {
+        margin-left: 0.3em;
+        content: "\f065";
+    }
+    .pp_contract::after {
+        content: "\f066";
+    }
+    .ppt {
+        padding-top: 20px;
+        text-indent: -9999px;
+    }
+    .pp_content_container {
+        position: relative;
+        text-align: left;
+        width: 100%;
+        .pp_left {
+            background-color: @colorWhite;
+        }
+        .pp_right {
+            background-color: @colorWhite;
+        }
+        .pp_content {
+            background-color: @colorWhite;
+            width: 100% !important;
+            .pp_loaderIcon {
+                display: block;
+                height: 24px;
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                width: 24px;
+                margin: -12px 0 0 -12px
+            }
+            .pp_fade {
+                display: none;
+                .pp_hoverContainer {
+                    position: absolute;
+                    top: 0;
+                    width: 100% !important;
+                    z-index: 2000;
+                    .pp_next {
+                        display: block;
+                        float: right;
+                        height: 100%;
+                        text-indent: -10000px;
+                        width: 49%;
+                        color: #000;
+                        &::after {
+                            .rotate(135deg);
+                            border-left: 3px solid;
+                            border-top: 3px solid;
+                            content: "";
+                            height: 15px;
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            width: 15px;
+                            color: #000;
+                        }
+                    }
+                    .pp_previous {
+                        display: block;
+                        float: left;
+                        height: 100%;
+                        text-indent: -10000px;
+                        width: 49%;
+                        color: #000;
+                        &::after {
+                            .rotate(-45deg);
+                            border-left: 3px solid;
+                            border-top: 3px solid;
+                            content: "";
+                            height: 15px;
+                            position: absolute;
+                            left: 0em;
+                            top: 50%;
+                            width: 15px;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+            .pp_gallery {
+                margin-top: 1em;
+                overflow: hidden;
+                height: 100px;
+                div {
+                    float: left;
+                    overflow: hidden;
+                    position: relative;
+                    margin-left: 15px;
+                }
+                ul {
+                    float: left;
+                    height: 100px;
+                    position: relative;
+                    white-space: nowrap;
+                    margin: 0 10px;
+                    list-style: none;
+                    padding: 0;
+                    li {
+                        display: block;
+                        float: left;
+                        text-align: center;
+                        margin: 0 5px 0 0;
+                        padding: 0;
+                        &.default a {
+                            display: block;
+                            img {
+                                display: none
+                            }
+                        }
+                    }
+                    a {
+                        border: 1px solid #e1e1e1;
+                        display: block;
+                        float: left;
+                        height: 45px;
+                        overflow: hidden;
+                        padding: 10px;
+                        background-color: @colorWhite;
+                        img {
+                            border: 0;
+                            width: 45px;
+                        }
+                    }
+                }
+                .pp_arrow_previous {
+                    .rotate(-45deg);
+                    border-left: 1px solid;
+                    border-top: 1px solid;
+                    height: 10px;
+                    left: 0;
+                    position: absolute;
+                    width: 10px;
+                    bottom: 20px;
+                    color: #000;
+                }
+                .pp_arrow_next {
+                    .rotate(135deg);
+                    border-left: 1px solid;
+                    border-top: 1px solid;
+                    height: 10px;
+                    right: 0;
+                    position: absolute;
+                    width: 10px;
+                    bottom: 20px;
+                    color: #000;
+                }
+            }
+            .pp_details {
+                .pp_play {
+                    display: none;
+                }
+                .currentTextHolder {
+                    bottom: 3.3em;
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+.pp_overlay {
+    background: rgb(0, 0, 0);
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9500
+}

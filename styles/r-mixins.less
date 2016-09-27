@@ -1,0 +1,59 @@
+.r--flex() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.r--flex-item(@value) {
+    -webkit-flex: @value;
+    -ms-flex: @value;
+    flex: @value;
+}
+
+.r--box-align(@align: start, @align2: @align) {
+    -webkit-box-align: @align;
+    -moz-box-align: @align;
+    -webkit-align-items: @align2;
+    -ms-flex-align: @align;
+    align-items: @align2;
+}
+
+.r--flex-justify-content(@justify: start, @justify2: @justify) {
+    -webkit-box-pack: @justify;
+    -moz-box-pack: @justify;
+    -webkit-justify-content: @justify2;
+    -ms-flex-pack: @justify;
+    justify-content: @justify2;
+}
+
+.r--flex-wrap(@wrap: wrap) {
+    -webkit-flex-wrap: @wrap;
+    -ms-flex-wrap: @wrap;
+    flex-wrap: @wrap;
+}
+
+.r--flex-order(@order) {
+    -webkit-box-ordinal-group: @order + 1;
+    -moz-box-ordinal-group: @order + 1;
+    -webkit-order: @order;
+    -ms-flex-order: @order;
+    order: @order;
+}
+
+.r--flex-direction(@direction: normal, @direction2: horizontal, @direction3: row) {
+    -webkit-box-direction: @direction;
+    -moz-box-direction: @direction;
+    -webkit-box-orient: @direction2;
+    -moz-box-orient: @direction2;
+    -webkit-flex-direction: @direction3;
+    -ms-flex-direction: @direction3;
+    flex-direction: @direction3;
+}
+
+.r--box-flex-align(@align: auto, @align2: @align) {
+    -webkit-align-self: @align;
+    -ms-flex-item-align: @align2;
+    align-self: @align;
+}

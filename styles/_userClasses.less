@@ -1,0 +1,127 @@
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.relative {
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.px1 {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border-width: 0;
+    vertical-align: middle;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.none {
+    display: none !important;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.px1 {
+    display: none;
+    vertical-align: middle;
+}
+
+.clearfix {
+    .clearfixm();
+}
+
+hr.separator {
+    border-width: 1px 0 0 0;
+    border-color: @borderColor;
+    border-style: solid;
+    margin: 1em 0;
+}
+
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    padding: 0.35em 0.85em;
+    margin: 0;
+    font-size: 1.15em;
+    line-height: 1.35;
+    color: @linkBasicColor;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #b1b1b1;
+    background-color: @borderColor;
+    position: relative;
+    text-transform: lowercase;
+    text-decoration: none;
+    &:hover {
+        .transition(background-color 0.3s linear);
+        color: @colorWhite;
+        background-color: @buttonHover;
+        border-color: @buttonHover;
+    }
+    &:focus,
+    &:active {
+        .transition(background-color 0.1s linear);
+        color: @colorWhite;
+        background-color: @colorBlack;
+        border-color: @colorBlack;
+    }
+    &.btn-red {
+        background-color: @maincolor;
+        border: 1px solid @maincolor;
+        color: @colorWhite;
+        &:hover {
+            background-color: @buttonHover;
+            border-color: @buttonHover;
+        }
+    }
+    &.btn-small {
+        font-size: 1em;
+        padding: 0.3em 0.6em;
+    }
+    &.left {
+        margin-left: 0;
+    }
+    &.right {
+        margin-right: 0;
+    }
+}
