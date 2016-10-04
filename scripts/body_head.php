@@ -20,7 +20,12 @@
     })(window, document, 'script', 'dataLayer', 'GTM-ML92MV');
 </script>
 <!-- End Google Tag Manager -->
-{/literal} {dynamic} {if $cookie}
+{/literal}
+
+<div id="page-top">
+</div>
+
+{dynamic} {if $cookie}
 <div id="cookie">
     <div class="container clearfix">
         {if $cookiepage}
@@ -258,7 +263,7 @@
 </nav>
 
 <div class="btn-tgl-up">
-    <a href="#page-nav" class="page-scroll">&#8743;</a>
+    <a href="#page-top" class="page-scroll">&#8743;</a>
 </div>
 
 
